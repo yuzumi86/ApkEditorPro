@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "IS_PRO", "true"
+            buildConfigField "boolean", "WITH_SIGN", "true"
+            buildConfigField "boolean", "DISPLAY_APP", "true"
+            buildConfigField "boolean", "ODEX_PATCH", "true"
+            buildConfigField "boolean", "SHOW_AGREEMENT", "false"
+            buildConfigField "boolean", "LIMIT_NEW_VERSION", "true"
+            buildConfigField "boolean", "PARSER_ONLY", "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            buildConfigField "boolean", "IS_PRO", "true"
+            buildConfigField "boolean", "WITH_SIGN", "true"
+            buildConfigField "boolean", "DISPLAY_APP", "true"
+            buildConfigField "boolean", "ODEX_PATCH", "true"
+            buildConfigField "boolean", "SHOW_AGREEMENT", "false"
+            buildConfigField "boolean", "LIMIT_NEW_VERSION", "true"
+            buildConfigField "boolean", "PARSER_ONLY", "false"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    namespace 'com.gmail.heagoo.apkeditor.base'
+}
+
+dependencies {
+    implementation project(':apkLibrary')
+    implementation project(':_AndroidCommon')
+    implementation project(':_AndroidEditor')
+    implementation project(':httpServer')
+    implementation project(':PngEditor')
+    implementation project(':imageViewLib')
+
+    implementation 'com.google.guava:guava:31.1-jre'
+
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'androidx.interpolator:interpolator:1.0.0'
+    implementation 'androidx.fragment:fragment:1.5.5'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.13.0-alpha03'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.work:work-runtime:2.8.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}

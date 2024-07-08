@@ -1,0 +1,25 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+    }
+}
+
+ext {
+        kotlin_version = '1.9.21'
+        compileSdkVersion = 34
+        buildToolsVersion = '34.0.0'
+        targetSdkVersion = 26
+        minSdkVersion = 21
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
