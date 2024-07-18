@@ -24,11 +24,44 @@ android {
             path 'src/main/jni/Android.mk'
         }
     }
+signingConfigs {
+        release {
+            // Specify the name of your keystore file
+            // The file must be located in your module directory
+            storeFile file("key.jks")
+						
+            // The keystore password
+            storePassword "MODER123"
+						
+            // The key alias, same as the one you specified with '-alias' argument while creating the keystore
+            keyAlias "ismasrull"
+						
+            // The key password
+            keyPassword "MODER123"
+        }
+        debug {
+            storeFile file("key.jks")
+            storePassword "MODER123"
+            keyAlias "ismasrull"
+            keyPassword "MODER123"
+        }
+    }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true
+            proguardFiles 'proguard-project.txt'
+
+            ndk {
+                abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+            }
+        }
+    debug {
+        signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
             proguardFiles 'proguard-project.txt'
 
             ndk {

@@ -31,7 +31,7 @@ android {
             buildConfigField "boolean", "SHOW_AGREEMENT", "false"
             buildConfigField "boolean", "LIMIT_NEW_VERSION", "true"
             buildConfigField "boolean", "PARSER_ONLY", "false"
-        }
+        } 
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -49,7 +49,7 @@ dependencies {
     implementation project(':imageViewLib')
 
     implementation 'com.google.guava:guava:31.1-jre'
-
+    implementation 'cat.ereza:customactivityoncrash:2.4.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation 'androidx.interpolator:interpolator:1.0.0'
     implementation 'androidx.fragment:fragment:1.5.5'

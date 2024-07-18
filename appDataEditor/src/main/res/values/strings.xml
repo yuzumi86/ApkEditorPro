@@ -4,7 +4,7 @@
     <color name="skyblue">#ff1ca1d4</color>
     <color name="grey">#ffb4cae9</color>
     <color name="black">#ff000000</color>
-
+    <string name="save">Save</string>
     <string name="appdm_backup">Backup</string>
     <string name="appdm_backup_list">Backup List</string>
     <string name="appdm_preference">Preference</string>

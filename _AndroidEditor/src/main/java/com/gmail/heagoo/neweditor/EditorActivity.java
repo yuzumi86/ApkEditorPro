@@ -36,6 +36,8 @@ import com.gmail.heagoo.common.CustomizedLangActivity;
 import com.gmail.heagoo.common.ProcessingDialog;
 import com.gmail.heagoo.common.RefInvoke;
 
+//import com.gmail.heagoo.common.R;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.TimerTask;

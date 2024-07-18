@@ -7,8 +7,9 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
-
 import com.gmail.heagoo.apkeditor.pro.R;
+
+//import com.gmail.heagoo.apkeditor.pro.R;
 
 public class SetIcon {
 
@@ -49,8 +50,7 @@ public class SetIcon {
 
         // Get matched activity
         int matchedIndex = 0;
-        String[] iconValues = activity.getResources().getStringArray(
-                R.array.appicon_value);
+        String[] iconValues = activity.getResources().getStringArray(R.array.appicon_value);
         for (int i = 0; i < iconValues.length; i++) {
             if (iconValues[i].equals(iconValue)) {
                 matchedIndex = i;
@@ -74,8 +74,7 @@ public class SetIcon {
 
     public static int getSelectedIcon(Activity activity) {
         int[] iconIds = getAllIcons();
-        String iconValues[] = activity.getResources().getStringArray(
-                R.array.appicon_value);
+        String iconValues[] = activity.getResources().getStringArray(R.array.appicon_value);
 
         SharedPreferences sp = PreferenceManager
                 .getDefaultSharedPreferences(activity);

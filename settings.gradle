@@ -1,9 +1,29 @@
-include ':apkLibrary', ':httpServer', ':PngEditor'
-include ':_AndroidCommon'
-include ':imageViewLib'
-include ':apkEditor'
-include ':appListUtil'
-include ':sqliteUtil'
-include ':_AndroidEditor'
-include ':appDataEditor'
-include ':apkEditorPro'
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+  }
+}
+
+
+
+dependencyResolutionManagement {
+  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+  repositories {
+    google()
+    mavenCentral()
+  }
+}
+rootProject.name = "ApkEditor"
+include (':apkLibrary')
+include (':PngEditor')
+include (':_AndroidCommon')
+include (':httpServer')
+include (':imageViewLib')
+include (':apkEditor')
+include (':appListUtil')
+include (':sqliteUtil')
+include (':_AndroidEditor')
+include (':appDataEditor')
+include (':apkEditorPro')

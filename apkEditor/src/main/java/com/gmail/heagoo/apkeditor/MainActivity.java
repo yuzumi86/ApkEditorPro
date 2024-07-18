@@ -34,6 +34,7 @@ import com.gmail.heagoo.common.FileUtil;
 import com.gmail.heagoo.common.IOUtils;
 import com.gmail.heagoo.httpserver.HttpServiceManager;
 
+import com.google.android.material.button.MaterialButton;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -201,29 +202,30 @@ public class MainActivity extends AppCompatActivity implements
         setupSlidingMenu();
 
         // Select apk from folder
-        TextView openApkBtn = (TextView) this.findViewById(R.id.tv_select_apkfile);
+        MaterialButton openApkBtn = (MaterialButton) this.findViewById(R.id.tv_select_apkfile);
         openApkBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, FileListActivity.class);
             startActivity(intent);
         });
 
         // Select apk from app
-        TextView openAppBtn = (TextView) this.findViewById(R.id.tv_select_appfile);
-        if (BuildConfig.DISPLAY_APP) {
+        MaterialButton openAppBtn = (MaterialButton) this.findViewById(R.id.tv_select_appfile);
             openAppBtn.setOnClickListener(v -> {
                 Intent intent = new Intent(MainActivity.this, UserAppActivity.class);
                 startActivity(intent);
             });
-        } else {
-            openAppBtn.setText(R.string.settings);
-            openAppBtn.setOnClickListener(v -> {
+        
+         //   openAppBtn.setText(R.string.settings);
+            MaterialButton settingsg = (MaterialButton) this.findViewById(R.id.tv_settings);
+            settingsg.setOnClickListener( v -> {
                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
             });
-        }
+            
+        
 
         // Exit
-        TextView exitButton = (TextView) this.findViewById(R.id.tv_exit);
+        MaterialButton exitButton = (MaterialButton) this.findViewById(R.id.tv_exit);
         exitButton.setOnClickListener(v -> {
             if (System.currentTimeMillis() < 3600 * 1000) {
                 test();
@@ -233,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements
 
         // Help
         // For APK Parser, use it as 'project'
-        TextView helpButton = (TextView) this.findViewById(R.id.tv_help);
+        MaterialButton helpButton = (MaterialButton) this.findViewById(R.id.tv_help);
         if (BuildConfig.PARSER_ONLY) {
             helpButton.setText(R.string.projects);
             helpButton.setOnClickListener(v -> {
